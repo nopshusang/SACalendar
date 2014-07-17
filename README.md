@@ -1,7 +1,6 @@
 SACalendar
 ==========
 
-![](//iOS%20Simulator%20Screen%20shot%20Jul%2016%2C%202014%2C%209.13.53%20PM.png)
 Introducing **SACalendar** - Easy to use and customizable iOS 7 Calendar
 
 Only need 3 lines of code to set up. Every view customizable to fit your need.
