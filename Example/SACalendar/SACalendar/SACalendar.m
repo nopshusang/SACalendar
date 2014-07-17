@@ -78,7 +78,7 @@
         current_date = [[DateUtil getCurrentDate]intValue];
         current_month = [[DateUtil getCurrentMonth]intValue];
         current_year = [[DateUtil getCurrentYear]intValue];
-
+        
         if (m == 0 && y == 0) {
             month = current_month;
             year = current_year;
@@ -104,11 +104,11 @@
     [self addSubview:scrollView];
     
     return self;
-
+    
 }
 
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context {
-    if (_delegate) {
+    if (nil != _delegate && [_delegate respondsToSelector:@selector(SACalendar:didDisplayCalendarForMonth:year:)]) {
         [_delegate SACalendar:self didDisplayCalendarForMonth:month year:year];
     }
 }
@@ -179,9 +179,11 @@
         }
         state = LOADSTATEPREVIOUS;
         
-        [_delegate SACalendar:self didDisplayCalendarForMonth:month year:year];
+        if (nil != _delegate && [_delegate respondsToSelector:@selector(SACalendar:didDisplayCalendarForMonth:year:)]) {
+            [_delegate SACalendar:self didDisplayCalendarForMonth:month year:year];
+        }
     }
-
+    
     /*
      * if already exists, reload the calendar with new values
      */
@@ -404,7 +406,7 @@
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     int width = self.frame.size.width;
     int offset = (width % DAYS_IN_WEEKS) / 4;
-      // top, left, bottom, right
+    // top, left, bottom, right
     return UIEdgeInsetsMake(0,offset,0,offset);
 }
 
@@ -413,7 +415,10 @@
     if (!(indexPath.row < firstDay || indexPath.row >= firstDay + daysInMonth)) {
         
         int dateSelected = (int)indexPath.row - firstDay + 1;
-        [_delegate SACalendar:self didSelectDate:dateSelected month:month year:year];
+        
+        if (nil != _delegate && [_delegate respondsToSelector:@selector(SACalendar:didSelectDate:month:year:)]) {
+            [_delegate SACalendar:self didSelectDate:dateSelected month:month year:year];
+        }
         
         selectedRow = (int)indexPath.row;
     }
