@@ -1,7 +1,9 @@
 SACalendar
 ==========
 
-![alt tag](https://raw.githubusercontent.com/nopshusang/SACalendar/master/Screenshots/demo.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nopshusang/SACalendar/master/Screenshots/demo.png" alt="sample"/>
+</p>
 
 Introducing **SACalendar** - Easy to use and customizable iOS 7 Calendar
 
