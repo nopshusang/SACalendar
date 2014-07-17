@@ -1,6 +1,8 @@
 SACalendar
 ==========
 
+![alt tag](https://raw.githubusercontent.com/nopshusang/SACalendar/master/Screenshots/demo.png)
+
 Introducing **SACalendar** - Easy to use and customizable iOS 7 Calendar
 
 Only need 3 lines of code to set up. Every view customizable to fit your need.
