@@ -15,6 +15,10 @@
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [formatter setLocale:usLocale];
+    
     [formatter setCalendar:gregorianCalendar];
     [formatter setDateFormat:@"dd"];
     return [formatter stringFromDate:[NSDate date]];
@@ -24,6 +28,10 @@
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [formatter setLocale:usLocale];
+    
     [formatter setCalendar:gregorianCalendar];
     [formatter setDateFormat:@"MM"];
     return [formatter stringFromDate:[NSDate date]];
@@ -33,6 +41,10 @@
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [formatter setLocale:usLocale];
+    
     [formatter setCalendar:gregorianCalendar];
     [formatter setDateFormat:@"yyyy"];
     return [formatter stringFromDate:[NSDate date]];
@@ -47,6 +59,10 @@
     [theDateFormatter setCalendar:gregorianCalendar];
     
     [theDateFormatter setDateFormat:@"EEEE"];
+    
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [theDateFormatter setLocale:usLocale];
+    
     NSString *weekDay =  [theDateFormatter stringFromDate:[NSDate date]];
     return weekDay;
 }
@@ -88,10 +104,16 @@
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     [dateFormatter setCalendar:gregorianCalendar];
     
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setLocale:usLocale];
+    
     NSDate *capturedStartDate = [dateFormatter dateFromString: [NSString stringWithFormat:@"%04i-%02i-%02i",year,month,date]];
     
     NSDateFormatter *weekday = [[NSDateFormatter alloc] init];
+    [weekday setLocale:usLocale];
+    
     [weekday setDateFormat: @"EEEE"];
+    
     return [weekday stringFromDate:capturedStartDate];
 }
 @end
