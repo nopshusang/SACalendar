@@ -42,6 +42,10 @@
 {
     NSDateFormatter* theDateFormatter = [[NSDateFormatter alloc] init];
     [theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [theDateFormatter setCalendar:gregorianCalendar];
+    
     [theDateFormatter setDateFormat:@"EEEE"];
     NSString *weekDay =  [theDateFormatter stringFromDate:[NSDate date]];
     return weekDay;
@@ -80,6 +84,10 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [dateFormatter setCalendar:gregorianCalendar];
+    
     NSDate *capturedStartDate = [dateFormatter dateFromString: [NSString stringWithFormat:@"%04i-%02i-%02i",year,month,date]];
     
     NSDateFormatter *weekday = [[NSDateFormatter alloc] init];

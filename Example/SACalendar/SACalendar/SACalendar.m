@@ -296,6 +296,7 @@
 {
     int monthToLoad = [self monthToLoad:(int)collectionView.tag];
     int yearToLoad = [self yearToLoad:(int)collectionView.tag];
+    
     firstDay = (int)[daysInWeeks indexOfObject:[DateUtil getDayOfDate:1 month:monthToLoad year:yearToLoad]];
     
     UILabel *monthLabel = [monthLabels objectForKey:[NSString stringWithFormat:@"%li",(long)collectionView.tag]];
