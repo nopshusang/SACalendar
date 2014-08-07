@@ -152,7 +152,7 @@
     else if(state == LOADSTATENEXT){
         prev_month = month - 1;
         prev_year = year;
-        if (prev_month <= MIN_MONTH) {
+        if (prev_month < MIN_MONTH) {
             prev_month = MAX_MONTH;
             prev_year--;
         }
