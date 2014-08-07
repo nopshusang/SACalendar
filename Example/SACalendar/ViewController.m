@@ -44,14 +44,14 @@
  */
 -(void) SACalendar:(SACalendar*)calendar didSelectDate:(int)day month:(int)month year:(int)year
 {
-    NSLog(@"Date Selected : %02i/%02i/%04i",day,month,year);
+    //NSLog(@"Date Selected : %02i/%02i/%04i",day,month,year);
 }
 
 /**
  *  Delegate method : get called user has scroll to a new month
  */
 -(void) SACalendar:(SACalendar *)calendar didDisplayCalendarForMonth:(int)month year:(int)year{
-    NSLog(@"Displaying : %@ %04i",[DateUtil getMonthString:month],year);
+    //NSLog(@"Displaying : %@ %04i",[DateUtil getMonthString:month],year);
 }
 
 @end
