@@ -429,7 +429,12 @@
     [collectionView reloadData];
 }
 
-
+/**
+ *  Clean up
+ */
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"delegate"];
+}
 
 
 @end
